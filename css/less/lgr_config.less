@@ -1,0 +1,343 @@
+/*
+
+    Gueeks Web Studio
+    www.gueeks.com
+    contato@gueeks.com
+
+	//Configurações do layout do tema
+
+*/
+
+
+////////////////////////////////
+/* Ligre */
+////////////////////////////////
+
+
+
+/******************************/
+/* Body */
+/*****************************/
+
+//Cor de fundo da body
+@lgr-body-bg:#efefef;
+
+//Cor padrão dos textos
+@lgr-body-text-color:#666;
+
+//Cor padrão dos links
+@lgr-body-link-color:#069;
+
+//Cor dos links ao passar o mouse
+@lgr-body-link-color-hover:darken(@lgr-body-link-color, 15%);
+
+//Margem
+@lgr-body-margin:30px;
+
+//Padding
+@lgr-body-padding:30px;
+
+
+
+/******************************/
+/* Images */
+/*****************************/
+
+//Endereço das imagens
+@lgr-img-src: '../img/';
+
+
+
+/******************************/
+/* Grids do layout */
+/*****************************/
+
+//Numero de colunas
+@lgr-grid-columns:12;
+
+//Espaço entre as colunas
+@lgr-grid-columns-space:30px;
+
+
+
+
+/******************************/
+/* Cores */
+/*****************************/
+
+//Cor primária
+@lgr-color-primary:#efefef;
+
+//Cor para mensagem de sucesso
+@lgr-color-success:#00B259;
+
+// Cor para mensagem de aviso
+@lgr-color-alert:#DBA708;
+
+//Cor para mensagem de erro
+@lgr-color-error:#FF4D4D;
+
+//Cor para mensagem de informação.
+@lgr-color-info:#0085B2;
+
+//Cinzas
+@lgr-color-gray:@gray; 				   // #555
+@lgr-color-gray-darker: @gray-darker;  // #222
+@lgr-color-gray-dark: @gray-dark;      // #333
+@lgr-color-gray-light:@gray-light;	   // #999
+@lgr-color-gray-lighter:@gray-lighter; // #eee
+
+//Outras Cores
+@lgr-color-red:    #B20000;
+@lgr-color-blue:   #003E7E;
+@lgr-color-ciano:  #00A0EE;
+@lgr-color-pink:   #FF00FF;
+@lgr-color-green:  #007777;
+@lgr-color-yellow: #FFFF00;
+@lgr-color-purple: #660066;
+@lgr-color-orange: #FFBF00;
+
+
+
+/******************************/
+/* Z-Index dos componentes */
+/*****************************/
+
+@lgr-zindex-navbar:        		1000;
+@lgr-zindex-dropdown:      		1000;
+@lgr-zindex-popover:       	    1010;
+@lgr-zindex-tooltip:            1030;
+@lgr-zindex-navbar-fixed:       1030;
+@lgr-zindex-modal-background:   1040;
+@lgr-zindex-modal:              1050;
+
+
+
+/******************************/
+/* Bordas arredondadas */
+/*****************************/
+
+@lgr-corner: 3px;
+@lgr-corner-large: 3px;
+@lgr-corner-small: 3px;
+
+
+
+/******************************/
+/* Tipografia */
+/*****************************/
+
+//Tamanho padrão dos textos
+@lgr-font-size:  12px;
+@lgr-font-large: ceil(@lgr-font-size * 1.25); // ~18px
+@lgr-font-small: ceil(@lgr-font-size * 0.85); // ~12px
+
+@lgr-font-h1:    floor(@lgr-font-size * 2.6); // ~36px
+@lgr-font-h2:    floor(@lgr-font-size * 2.15); // ~30px
+@lgr-font-h3:    ceil(@lgr-font-size * 1.7); // ~24px
+@lgr-font-h4:    ceil(@lgr-font-size * 1.25); // ~18px
+@lgr-font-h5:    @lgr-font-size;
+@lgr-font-h6:    ceil(@lgr-font-size * 0.85); // ~12px
+
+
+//Fontes sem serifa
+@lgr-font-sans-serif:"Helvetica Neue", Helvetica, Arial, sans-serif;
+
+//Fontes com serifa
+@lgr-font-serif:Georgia, "Times New Roman", Times, serif;
+
+//Fontes monospace
+@lgr-font-monospace:Monaco, Menlo, Consolas, "Courier New", monospace;
+
+//Tipo principal de fonte a ser usada;
+@lgr-font-main: @lgr-font-sans-serif;
+
+
+
+
+/******************************/
+/* Botões */
+/*****************************/
+
+//Intensidade da borda do botão
+@lgr-btn-border-darken: 15%;
+
+//Botão flat
+@lgr-btn-flat-color:@lgr-color-gray;
+@lgr-btn-flat-color-hover:@lgr-color-gray;
+@lgr-btn-flat-color-bg: white;
+
+//Botão padrão
+@lgr-btn-default-color:@lgr-color-gray;
+@lgr-btn-default-color-hover:@lgr-color-gray;
+@lgr-btn-default-color-bg: white;
+
+//Botões primários
+@lgr-btn-primary-color: white;
+@lgr-btn-primary-color-hover: white;
+@lgr-btn-primary-color-bg: @lgr-color-blue;
+
+//Botões sucesso
+@lgr-btn-success-color: white;
+@lgr-btn-success-color-hover: white;
+@lgr-btn-success-color-bg: @lgr-color-green;
+
+//Botões warning
+@lgr-btn-warning-color: white;
+@lgr-btn-warning-color-hover: white;
+@lgr-btn-warning-color-bg: @lgr-color-orange;
+
+//Botões danger
+@lgr-btn-danger-color: white;
+@lgr-btn-danger-color-hover: white;
+@lgr-btn-danger-color-bg: @lgr-color-red;
+
+//Botões informação
+@lgr-btn-info-color: white;
+@lgr-btn-info-color-hover: white;
+@lgr-btn-info-color-bg: @lgr-color-ciano;
+
+
+
+
+/******************************/
+/* Selects */
+/*****************************/
+
+//Intensidade da borda do botão
+@lgr-select-bg-darken: 8%;
+
+//Intensidade da borda do botão
+@lgr-select-border-darken: 15%;
+
+
+//Select flat
+@lgr-select-flat-color:@lgr-color-gray;
+@lgr-select-flat-color-hover:@lgr-color-gray;
+@lgr-select-flat-color-bg: white;
+
+
+/******************************/
+/* Modais */
+/*****************************/
+
+
+// Padding do modal
+@lgr-modal-padding: 20px;
+
+// Padding do titulo do modal
+@lgr-modal-title-padding: 15px;
+
+// Espaço entre as linhas do titulo
+@lgr-modal-title-line-height: 20px;
+
+// Cor da borda do topo
+@lgr-modal-header-border:#efefef;
+
+// Cor da borda do rodapé
+@lgr-modal-footer-border: #efefef;
+
+// Cor do conteúdo do modal
+@lgr-modal-content-bg: white;
+
+// Cor da borda do conteúdo do modal
+@lgr-modal-content-border:#efefef;
+
+//Cor do fallback
+@lgr-modal-content-fallback:#999;
+
+//Cor do fundo do modal
+@lgr-modal-overlay-color: white;
+
+
+
+/******************************/
+/* Formulários */
+/*****************************/
+
+//Cor da borda do campo
+@lgr-form-input-border: lighten(@lgr-color-gray,40%);
+
+//Cor do texto do campo
+@lgr-form-input-color: @lgr-color-gray;
+
+//Cor de fundo do campo
+@lgr-form-input-bg: white;
+
+//Cor do campo quando desabilitado
+@lgr-form-input-disabled: @lgr-color-gray-light;
+
+//Cor da descrição do campo
+@lgr-form-input-placeholder: darken(@lgr-color-gray-light,15%);
+
+//Cor da borda do campo quando em foco.
+@lgr-form-input-focus-color:lighten(#084482,10%);
+
+
+
+
+
+
+////////////////////////////////
+/* Bootstrap */
+////////////////////////////////
+
+
+@body-bg:               @lgr-body-bg;
+@text-color:            @lgr-body-text-color;
+@link-color:            @lgr-body-link-color;
+@link-hover-color:      @lgr-body-link-color-hover;
+
+@brand-primary:         @lgr-color-primary;
+@brand-success:         @lgr-color-success;
+@brand-warning:         @lgr-color-alert;
+@brand-danger:          @lgr-color-error;
+@brand-info:            @lgr-color-info;
+
+@border-radius-base:     @lgr-corner;
+@border-radius-large:    @lgr-corner-large;
+@border-radius-small:    @lgr-corner-small;
+
+@font-size-base:          @lgr-font-size;
+@font-size-large:         @lgr-font-large;
+@font-size-small:         @lgr-font-small;
+
+@font-size-h1:            @lgr-font-h1;
+@font-size-h2:            @lgr-font-h2;
+@font-size-h3:            @lgr-font-h3;
+@font-size-h4:            @lgr-font-h4;
+@font-size-h5:            @lgr-font-size;
+@font-size-h6:            @lgr-font-h6;
+
+@font-family-sans-serif:  @lgr-font-sans-serif;
+@font-family-serif:       @lgr-font-serif;
+@font-family-monospace:   @lgr-font-monospace;
+@font-family-base:        @lgr-font-main;
+
+@grid-columns:              @lgr-grid-columns;
+@grid-gutter-width:         @lgr-grid-columns-space;
+
+@input-border: 		 		@lgr-form-input-border;
+@input-color:  		 		@lgr-form-input-color;
+@input-bg:     		 		@lgr-form-input-bg;
+@input-bg-disabled:  		@lgr-form-input-disabled;
+@input-border-focus: 		@lgr-form-input-focus-color;
+@input-color-placeholder :  @lgr-form-input-placeholder;
+
+@lgr-zindex-navbar: @zindex-navbar;
+@lgr-zindex-dropdown: @zindex-dropdown;
+@lgr-zindex-popover: @zindex-popover;           
+@lgr-zindex-tooltip: @zindex-tooltip;           
+@lgr-zindex-navbar-fixed :@zindex-navbar-fixed;      
+@lgr-zindex-modal-background: @zindex-modal-background;  
+@lgr-zindex-modal: @zindex-modal;
+
+@modal-inner-padding:   		@lgr-modal-padding;
+@modal-title-padding:   		@lgr-modal-title-padding;
+@modal-title-line-height:   	@lgr-modal-title-line-height;
+@modal-content-bg:   			@lgr-modal-content-bg;
+@modal-content-border-color:    @lgr-modal-content-border;
+@modal-content-fallback-border-color:   @lgr-modal-content-fallback;
+@modal-backdrop-bg:   @lgr-modal-overlay-color;
+@modal-header-border-color:   @lgr-modal-header-border;
+@modal-footer-border-color:   @lgr-modal-footer-border;

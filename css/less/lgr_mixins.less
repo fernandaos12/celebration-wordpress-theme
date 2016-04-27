@@ -1,0 +1,1183 @@
+/*    
+    Gueeks Web Studio
+    www.gueeks.com
+    contato@gueeks.com
+     
+*/
+
+
+/*///////////////////////////////*/
+/*  Boxes de conteúdos //////////*/
+/*///////////////////////////////*/
+
+/*
+	
+	@fontFamily: Tipo de fonte
+	@fontSize: Tamanho da fonte
+	@imgWidth: Tamanho do thumbnail
+	@articleBg: Background do article
+	@articleBorderColor: Cor da borda do article
+	@articlePadding: Espaço interno do article
+	@articleWidth: Tamanho do article
+
+*/
+
+.mxn-content-box(@padding,@bgColor,@borderColor,@borderRadius){
+
+	padding: @padding;
+	border: 1px solid @borderColor;
+	background-color: @bgColor;
+	.base-border-round(@borderRadius);
+	
+}
+
+
+
+
+
+/*///////////////////////////////*/
+/*  Cabeçalhos dos conteúdos ////*/
+/*///////////////////////////////*/
+
+/*
+	
+	@fontSize: Tamanho da fonte
+	@fontColor: Cor do cabeçalho
+
+*/
+
+.mxn-header(@width,@fontFamily,@fontSize,@fontColor,@marginTop,@marginBottom){
+	
+	> header{
+		
+		h1,h2,h3,h4,h5,h6{
+		
+			width:@width;
+			margin: 0;
+			color:@fontColor;
+			font-size: @fontSize;
+			font-family: @fontFamily;
+			margin-top: @marginTop;
+			margin-bottom: @marginBottom;
+			
+		}
+
+		i{
+			float:left;
+			color:@fontColor;
+			font-size: @fontSize;
+			margin-right:12px;
+		}
+	}
+}
+
+
+
+/*///////////////////////////////*/
+/*  Listas de artigos  //////////*/
+/*///////////////////////////////*/
+
+/*
+	
+	@fontFamily: Tipo de fonte
+	@fontSize: Tamanho da fonte
+	@imgWidth: Tamanho do thumbnail
+	@articleBg: Background do article
+	@articleBorderColor: Cor da borda do article
+	@articlePadding: Espaço interno do article
+	@articleWidth: Tamanho do article
+
+*/
+
+
+.mxn-article-list(@fontFamily: @lgr-font-sans-serif,@fontSize,@imgWidth,@articleBg,@articleBorderColor,@articlePadding,@articleWidth){
+
+
+	article{
+
+		float: left;
+		width: @articleWidth;
+		margin: 0 (@lgr-body-margin - 15)  (@lgr-body-margin - 15) 0;
+		padding: @articlePadding;
+		background-color: @articleBg;
+		border-bottom:1px solid @articleBorderColor;
+
+		img{
+
+			float: left;
+			width: @imgWidth;
+			margin: 0 (@imgWidth / 3) 0 0;
+
+		}
+		
+		h1,h2,h3,h4,h5,h6{
+
+			color:@lgr-color-gray;
+			font-size: @fontSize;
+			padding-top: 5px;
+			margin: 0;
+			margin-bottom: 8px;
+			font-family: @fontFamily;
+			
+
+			a{
+				font-size: @fontSize !important;
+				color: @lgr-color-gray;
+				&:hover{
+					color: @lgr-color-secondy;
+				}
+			}
+
+		}
+
+		a{
+			font-size: 12px;
+		}
+		
+	}
+}
+
+
+/*//////////////////////////////////////////////*/
+/*  Listas de artigos - Coluna dupla  //////////*/
+/*//////////////////////////////////////////////*/
+
+
+
+.mxn-article-list-col-2(@fontFamily,@fontSize,@imgWidth,@articleBg,@articleBorderColor,@articlePadding,@articleWidth){
+
+	.mxn-article-list(@fontFamily,@fontSize,@imgWidth,@articleBg,@articleBorderColor,@articlePadding,@articleWidth);
+		
+	article{
+
+		&:nth-child(2n){
+			
+			margin-right: 0 !important;
+
+		}
+	}
+}
+
+
+
+/*//////////////////////////////////////////////*/
+/*  Listas de icones ///////////////////////////*/
+/*//////////////////////////////////////////////*/
+
+
+.mxn-article-icon-list(@colorIcon, @colorLink, @colorHoverLink){
+
+	article{
+
+			float: left;
+			width: 100%;
+			padding: 10px;
+			background-color: white;
+			border-bottom:1px solid lighten(@lgr-color-gray, 50%);
+
+			&:last-child{
+
+				background-color: white;
+				font-size: 12px;
+				border-bottom: none;
+
+				i{
+
+					font-size: 14px;
+					margin:0 6px 0 5px;
+				}
+
+				a{
+					float: right;
+				}
+				
+			}
+
+			i{
+				float: left;
+				color: @colorIcon;
+				font-size: 27px;
+				margin: 0 13px 0 0;
+			}
+
+			h1,h2,h3,h4,h5,h6{
+
+				color:@lgr-color-gray;
+				font-size: 15px;
+				padding-top: 5px;
+				margin: 0;
+
+				a{
+					color: @colorLink;
+					&:hover{
+						color: @colorHoverLink;
+					}
+				}
+
+			}
+
+			p{
+				color:@lgr-color-gray;
+				font-size: 12px;
+			}
+	}
+
+}
+
+
+/*//////////////////////////////////////////////*/
+/*  Preloader //////////////////////////////////*/
+/*//////////////////////////////////////////////*/
+
+
+.mxn-preloader(@w:300px,@h:15px,@overlayColor:black,@barColor:orange,@textColor:white,@textFamily:arial,@textSize:12px){
+
+      #jpreOverlayContent{
+        width: 100%;
+        height: 100%;
+        z-index: 999;
+        position: absolute;
+        background-color: @overlayColor;
+      }
+
+      #jpreOverlay {
+        background-color: @overlayColor;
+      }
+      #jpreSlide{
+        font-size:22px;
+        font-weight:bold;
+        color:#ccc;
+        text-align:center;
+        width:50%;
+        height:30%;
+      }
+      #jpreLoader{
+        width:@w;
+        height:@h;
+      }
+      #jpreBar {
+        background-color: @barColor;
+      }
+      #jprePercentage {
+        color:@textColor;
+        font-family: @textFamily;
+        font-size: @textSize;
+        text-align:center;
+        top:-100%;
+      }
+
+}
+
+
+/*//////////////////////////////////////////////*/
+/*  Scrollbar //////////////////////////////////*/
+/*//////////////////////////////////////////////*/
+
+
+.mxn-scrollbar(@colorDrag, @colorTrack){
+
+  .jspDrag{
+    background-color:@colorDrag !important;
+  }
+
+  .jspTrack{
+    background-color:lighten(@colorTrack,49%) !important;
+  }
+
+}
+
+
+/*//////////////////////////////////////////////*/
+/*  Box Flutuante //////////////////////////////*/
+/*//////////////////////////////////////////////*/
+
+/*
+	@padding: Espaço interno do box
+	@corner: Formato da borda
+	@bgHeader: Cor de fundo do cabeçalho
+	@colorHeader: Cor do texto de cabeçalho
+	@bgContent: Cor de fundo do box
+	@posX: Ajuste horizontal do box
+	@posY: Ajuste vertical do box
+	@pinX: Posição horizontal do pin
+	@pinY: Posição vertical do pin
+
+*/
+
+.mxn-floatbox(@padding,@corner,@colorLink,@colorCorner,@bgHeader,@colorHeader,@bgContent,@posX,@posY,@pinX,@pinY){
+
+	
+	display: none;
+	z-index: @lgr-zindex-dropdown;
+	position: absolute;
+	margin-left: @posX;
+	margin-top: @posY;
+
+	> div{
+
+		&:first-child{
+
+			width: 100%;
+			padding: @padding;
+			background-color: @bgHeader;
+			border:1px solid @colorCorner;
+			border-bottom: none;
+			.base-border-round-top(@corner);
+
+			h1,h2,h3{
+
+				margin: 0;
+				color: @colorHeader;
+				font-size: 16px;
+				font-family: @lgr-font-base;
+			}
+
+			figure{
+			
+				position: absolute;
+				margin-top: @pinY;
+				margin-left: @pinX;
+				.base-arrow-up(10px,darken(@bgHeader,10%));
+
+			}
+
+		}
+
+		&:nth-child(2){
+			
+			width: 100%;
+			padding: (@padding / 2);
+			background-color: @bgContent;
+			border-right:1px solid @colorCorner;
+			border-left:1px solid @colorCorner;
+		}
+
+		&:last-child{
+
+			width: 100%;
+			overflow: hidden;
+			padding: @padding - 3;
+			background-color:@bgHeader;
+			border:1px solid @colorCorner;
+			border-top:none;
+			.base-border-round-bottom(@corner);
+
+			a{
+				color: @colorLink;
+				text-align: left;
+				font-size: 12px;
+
+				&:hover{
+					color: lighten(@colorLink,30%);
+				}
+			}
+
+		}
+
+	}
+
+}
+
+
+/*//////////////////////////////////////////////*/
+/*  Notificações e Alertas /////////////////////*/
+/*//////////////////////////////////////////////*/
+
+/*
+	@colorBox: Cor da caixa de notificação
+	@colorBoxHover: Cor da caixa de notificação quando passado o mouse
+	@colorTitle: Cor do título da caixa
+	@colorDescription: Cor da descrição
+	@colorTime: Cor da hora e data
+	@colorLinks: Cor dos links
+
+*/
+
+.mxn-notifications(@colorBox,@colorBoxHover,@colorTitle,@colorDescription,@colorTime,@colorLink){
+
+	
+	article{
+
+		@imgMargin: 10px;
+
+		background-color: @colorBox;
+		border-bottom: 1px solid darken(@colorBox, 10%);
+		padding: 8px 6px 8px 6px;
+			
+		.left{
+			
+			float: left;
+			margin-right: @imgMargin;
+			margin-bottom: @imgMargin;
+		}
+
+		.right{
+			
+			float: right;
+			margin-left: @imgMargin;
+			margin-bottom: @imgMargin;
+		}
+
+		h1,h2,h3,h4,h5,h6 {
+
+			margin: 0;
+			font-size: 13px;
+			font-weight: bold;
+			margin-bottom: 3px;
+
+			a{
+				color: @colorTitle;
+				text-decoration: none;
+				&:hover{
+					color: @colorLink;
+				}
+			}
+		}
+
+		p{
+			
+			width: 100%;
+			font-size: 12px;
+
+			a{
+				
+				color:@colorDescription;
+				text-decoration: none;
+				&:hover{
+					color: @colorLink;
+				}
+			}
+
+		}
+
+		div{
+			i{
+				color: @colorTime;
+				font-size: 12px;
+			}
+		}
+
+		&:hover{
+			background-color:@colorBoxHover;
+		}
+
+		&:last-child{
+			border-bottom: none;
+		}
+	}
+
+
+}
+
+
+/*//////////////////////////////////////////////*/
+/*  Heros //////////////////////////////////////*/
+/*//////////////////////////////////////////////*/
+
+
+.mxn-hero-icon-vertical(@iconSize,@headerColor,@headerColorHover,@descSize,@descColor){
+ 
+		
+		.mxn-hero-icon-skin();
+
+		i,h1,h2,h3,h4,h5,h6,p{
+
+			display: block !important;
+			text-align: center !important;
+		}
+
+		i{
+			margin-bottom: 10px;
+			padding-bottom: 0;
+		}
+
+}
+
+
+.mxn-hero-icon-horizontal(@iconSize,@headerColor,@headerColorHover,@descSize,@descColor){
+
+	.mxn-hero-icon-skin();
+
+}
+
+
+.mxn-hero-icon-skin(){
+	
+
+	i{
+		
+		text-align: center;
+		font-size: @iconSize;
+		padding-bottom: 20px;
+
+	}
+
+	header{
+		
+		h1,h2,h3,h4,h5,h6{
+
+			text-align: left;
+			color:@headerColor;
+			margin: 0;
+			font-size: 18px;
+			margin-bottom: 10px;
+			font-family:@lgr-font-base;
+
+			a{
+				color:@headerColor;
+				&:hover{
+
+					color: @headerColorHover;
+				}
+			}
+
+		}
+	}
+
+	p{
+		
+		color:@descColor;
+		text-align: left;
+		font-size: @descSize;
+
+		a{
+			color:@descColor;
+			&:hover{
+
+				color: @headerColorHover;
+			}
+		}
+
+	}
+
+}
+
+
+/*//////////////////////////////////////////////*/
+/*  Lista de links com ícones //////////////////*/
+/*//////////////////////////////////////////////*/
+
+
+.mxn-icon-list-links(){
+
+	
+	ul{
+		
+		width: 100%;
+
+		li{
+			
+			width: 100%;
+			display: block;
+			border-bottom: 1px solid lighten(@lgr-color-gray, 50%);
+			
+			
+			a{
+				display: block;
+				padding: 8px;
+				margin-bottom: 1px;
+				color: @lgr-color-gray;
+				font-size: 13px;
+
+				&:hover{
+					color: blue;
+					background-color: lighten(@lgr-color-gray, 65%);
+				}
+
+				/* Icones */
+
+				i{
+					font-size: 19px;
+					vertical-align: middle;
+					margin-right: 8px;
+
+				}
+										
+			}
+
+			&:last-child{
+				
+				border-bottom: none;
+
+			}
+		}
+	}
+
+}
+
+
+/*//////////////////////////////////////////////*/
+/*  Tabelas ////////////////////////////////////*/
+/*//////////////////////////////////////////////*/
+
+.mxn-table-scroll(@headerColor,@headerBgColor,@colHeaderColor,@colHeaderBgColor,@colBodyBgColor,@minWidth){
+
+	table{
+
+		thead{
+			
+			color: @headerColor;
+			background-color: @headerBgColor;
+
+		}
+
+		tr{
+			th,td{
+
+				min-width: @minWidth;
+			}
+		}
+
+		&[class="sticky-col"]{
+
+			thead{
+				color: @colHeaderColor;
+				background-color: @colHeaderBgColor;
+				tr{
+					th{
+						padding-left: 10px;
+					}
+				}
+			}
+
+			tbody{
+
+				background-color: @colBodyBgColor;
+				tr{
+					th{
+						padding-left: 10px;
+					}
+				}
+			}
+		}
+
+		&[class="sticky-intersect"]{
+
+			thead{
+				
+				tr{
+					th{
+						color: @headerColor;
+						background-color: @headerBgColor !important;
+						padding-left: 10px;
+						height: 25px;
+					}
+				}
+			}
+
+
+		}
+
+		&[class="sticky-thead"]{
+
+			thead{
+				color: @headerColor;
+				background-color: @headerBgColor;
+				tr{
+					th{
+						padding-left: 10px;
+						height: 25px;
+					}
+				}
+			}
+
+		}
+
+	}
+}
+
+
+.mxn-table-header-sorter-fixed(@fontColor,@bgColor){
+
+
+	.tableFloatingHeaderOriginal{
+		
+		color: @fontColor;
+		background-color: @bgColor;
+		border-bottom: 1px solid darken(@bgColor,8%);
+
+		tr{
+			
+			
+			&[class="tablesorter-headerRow"]{
+
+				.tablesorter-headerAsc{
+
+					.mxn-sorter-icon("\f0d8");
+				}
+
+				.tablesorter-headerDesc{
+
+					.mxn-sorter-icon("\f0d7");
+				}
+
+				.tablesorter-headerUnSorted{
+
+					.mxn-sorter-icon("\f0dc");
+				}
+
+
+			}
+
+			&[class="tablesorter-filter-row"]{
+	
+				border-bottom: none;
+				background-color: lighten(@bgColor,45%);
+
+				input{
+
+					&[type="text"],&[type="email"],&[type="search"]{
+						
+						padding: @lgr-corner;
+						border:1px solid @lgr-form-input-border;
+						.base-border-round(@lgr-corner);
+					}
+				}
+
+			}//filtros
+
+
+
+			
+			.mxn-sorter-icon(@icon){
+
+				.tablesorter-header-inner{
+
+					i{
+
+						  float: right;
+						  position: relative;
+						  top: 1px;
+						  display: inline-block;
+						  font-family: 'FontAwesome';
+						  font-style: normal;
+						  font-weight: normal;
+						  line-height: 1;
+						  -webkit-font-smoothing: antialiased;
+						  -moz-osx-font-smoothing: grayscale;
+
+						  &:before {content:@icon;}
+
+						  &:empty {
+						    width: 1em;
+						  }
+
+					}
+				}
+
+			}//mxn
+
+		}
+
+	}
+}
+
+
+/*//////////////////////////////////////////////*/
+/*  Botões  ////////////////////////////////////*/
+/*//////////////////////////////////////////////*/
+
+.mxn-button-flat(@fontColorFlat,@fontColorHoverFlat,@bgColorFlat,@bgColorBorderFlat){
+	
+	.mxn-button-skin(@fontColorFlat,@fontColorHoverFlat,@bgColorFlat,@bgColorBorderFlat);
+	
+	&:hover{
+ 		background-color: darken(@bgColorFlat,3%);
+	}//hover
+
+
+}//botão flat
+
+.mxn-button-gradient(@fontColorGradient,@fontColorHoverGradient,@bgColorGradient,@bgColorBorderGradient){
+
+	.mxn-button-skin(@fontColorGradient,@fontColorHoverGradient,@bgColorGradient,@bgColorBorderGradient);
+	.mxn-button-skin-gradient(@bgColorGradient);
+	
+	&:hover{
+ 		.mxn-button-skin-gradient(darken(@bgColorGradient,4%));
+	}//hover
+
+}//botão com gradiente
+
+.mxn-button-skin(@fontColorSkin,@fontColorHoverSkin,@bgColorSkin,@borderColorSkin){
+
+	text-decoration: none;
+		
+	background-color: @bgColorSkin;
+
+	font: bold @lgr-font-size @lgr-font-sans-serif;
+	color: @fontColorSkin;
+	
+	display: inline-block;
+	
+	//padding: 5px 6px 4px 6px;
+	padding: (@padding-base-vertical + 1) @padding-base-horizontal;
+
+	
+	border-radius: 2px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border: solid 1px @borderColorSkin;
+
+	&:hover{
+	
+		color: @fontColorHoverSkin;
+	}
+
+	&:active{
+	
+		border-color: darken(@bgColorSkin,20%);
+		.base-box-shadow-inset(0,0,3px,darken(@bgColorSkin,25%));
+	}
+
+	i{
+		margin-right: 10px;
+	}
+
+}//botão skin
+
+.mxn-button-skin-gradient(@bgColorGradient){
+
+	text-shadow: 0 1px 0 darken(@bgColorGradient,15%);
+
+	background: @bgColorGradient;
+	background: -webkit-linear-gradient(top, @bgColorGradient, darken(@bgColorGradient,10%));
+	background: -moz-linear-gradient(top, @bgColorGradient, darken(@bgColorGradient,10%));
+	background: -ms-linear-gradient(top, @bgColorGradient, darken(@bgColorGradient,10%));
+	background: -o-linear-gradient(top, @bgColorGradient, darken(@bgColorGradient,10%));
+	-webkit-transition: border .20s;
+	-moz-transition: border .20s;
+	-o-transition: border .20s;
+	transition: border .20s;
+
+}
+
+
+/*//////////////////////////////////////////////*/
+/*  Selects  ///////////////////////////////////*/
+/*//////////////////////////////////////////////*/
+
+.mxn-select-flat(@fontColorFlat,@fontColorHoverFlat,@bgColorFlat,@bgColorBorderFlat){
+
+	.mxn-select-skin(@fontColorFlat,darken(@bgColorFlat,23%));
+	.mxn-button-flat(@fontColorFlat,@fontColorHoverFlat,@bgColorFlat,@bgColorBorderFlat);
+
+}
+
+.mxn-select-gradient(@fontColorGradient,@fontColorHoverGradient,@bgColorGradient,@bgColorBorderGradient){
+
+	.mxn-select-skin(@fontColorGradient,darken(@bgColorGradient,23%));
+	.mxn-button-gradient(@fontColorGradient,@fontColorHoverGradient,@bgColorGradient,@bgColorBorderGradient);
+
+}
+
+.mxn-select-skin(@selectedColor,@borderColor){
+	
+	border:1px solid @borderColor !important;
+
+	.filter-option{
+		color: @selectedColor;
+	}
+	
+}
+
+
+
+/*//////////////////////////////////////////////*/
+/*  Conteúdo Posts /////////////////////////////*/
+/*//////////////////////////////////////////////*/
+
+/*
+
+	// Parágrafo  //
+		@colorP: define a cor do texto;
+		@sizeP: define o tamanho do texto;
+		@heightP: define o espaçamento das linhas do texto;
+		@topP: define a margin superior;
+		@bottomP: define a margin inferior;
+	// Parágrafo  //
+
+
+	// Listas //
+		@sizeUl: define o tamanho do texto;
+		@colorUl: define a cor do texto;
+		@topUl: define a margin superior;
+		@bottomUl: define a margin inferior;
+		@styleUl: define o estilo dos itens da lista;
+
+		// Sublistas //
+		@sizeLi: define o tamanho do texto;
+		@colorLi: define a cor do textto;
+		@leftLi: define o recuo a esquerda do texto;
+	// Listas //
+
+
+	// Icones //
+		@sizeIcon: define o tamanho do icone;
+		@coloIcon: define a cor do icone;
+	// Icones //
+	
+
+	// Link //
+		@sizeLink: define o tamanho do texto;
+		@colorLink: define a cor do link;
+		@hoverLink: define o hover do link;
+	// Link //
+
+
+	// Imagens //
+		@imgTop: define a margin superior da imagem;
+		@imgBottom: define a margin inferior da imagem;
+
+*/
+
+.mxn-content-post(@colorP, @sizeP, @heightP, @topP, @bottomP, @sizeUl, @colorUl, @topUl, @bottomUl, @styleUl, @sizeLi, @colorLi, @leftLi, @sizeIcon, @colorIcon, @sizeLink, @colorLink, @hoverLink, @imgTop, @imgBottom){
+
+	// Parágrafo //
+	p{
+		color: @colorP;
+		font-size: @sizeP;
+		line-height: @heightP;
+		margin-top: @topP;
+		margin-bottom: @bottomP;
+	}
+
+
+	// Lista //
+	ul{
+		margin: 0px;
+		padding: 0px;
+		width: 100%;
+		font-size: @sizeUl;
+		color: @colorUl;
+		margin-top: @topUl;
+		margin-bottom: @bottomUl;
+		list-style: @styleUl;
+	
+		// Sublistas //
+		li{
+			margin: 0px;
+			padding: 0px;
+			width: 100%;
+			font-size: @sizeLi;
+			color: @colorLi;
+			margin-left: @leftLi;
+		}
+	}
+
+
+	// Imagens //
+	img{
+		&[class="aligncenter"]{
+			margin-top: @imgTop;
+			margin-bottom: imgBottom;
+		}
+
+		&[class="alignright"]{
+			margin-left: 15px;
+			margin-top: @imgTop;
+			margin-bottom: imgBottom;
+			float: right;
+		}
+
+		&[class="alignleft"]{
+			margin-right: 15px;
+			margin-top: @imgTop;
+			margin-bottom: @imgBottom;
+			float: left;
+		}
+	}
+
+	
+
+	// Icones //
+	i{
+		font-size: @sizeIcon;
+		color: @colorIcon;
+		vertical-align: middle;
+	}
+
+
+	// Links //
+	a{
+		font-size: @sizeLink;
+		color: @colorLink;
+		
+
+		&:hover{
+			color: @hoverLink;
+		}
+	}
+
+
+	// Vídeos //
+	iframe{
+		max-width: 100%;
+	}
+
+}
+
+
+
+
+
+/*//////////////////////////////////////////////*/
+/*  Títulos e Subtítulos ///////////////////////*/
+/*//////////////////////////////////////////////*/
+
+/*
+	// Título //
+		@sizeTitle: define o tamanho da fonte;
+		@colorTitle: define a cor da fonte;
+		@topTitle: define a margin superior;
+		@bottomTitle: define a margin inferior;
+	// Título //
+	
+*/
+
+.mxn-title(@sizeTitle, @colorTitle, @topTitle, @bottomTitle){
+	
+		// Atributos dos títulos e subtítulos //
+		font-size: @sizeTitle;
+		color: @colorTitle;
+		margin-top: @topTitle;
+		margin-bottom: @bottomTitle;
+	
+}
+
+
+
+/*//////////////////////////////////////////////*/
+/*  Box de "Deixe seu comentário" //////////////*/
+/*//////////////////////////////////////////////*/
+
+/* 
+	@wAvatar: define o width do avatar;
+	@bRadius: define o tamanho do radius da bordar;
+	@colorArrow: define a cor da seta lateral;
+	@boxPadding: define o padding do box;
+	@bgBox: define o background do box;
+	@borderBox: define a cor da borda do box;
+
+*/
+
+// Midias Sociais e Comentários //
+.mxn-coments-input(@wAvatar, @bRadius, @colorArrow, @boxPadding, @bgBox, @borderBox){
+
+
+		// Box de comentários //
+		.box-coment-avatar{
+			float: left;
+			margin-top: 3px;
+			img{
+				width: @wAvatar;
+				border-radius: @bRadius;
+			}
+		}
+
+		.arrow-left{
+			position: relative;
+			top: 15px;
+			left: 15px;
+			.base-arrow-left(10px, @colorArrow);
+			float: left;
+		}
+
+		.box-coment-input{
+			padding: @boxPadding;
+			border-radius: @bRadius;
+			background-color:@bgBox;
+			border: 1px solid @borderBox;
+			margin-left: 70px;
+
+
+			input[type="text"]{
+				border: 1px solid @borderBox;
+				width: 100%;
+				padding: 5px;
+			}
+
+			::-webkit-input-placeholder{
+			   font-style: italic;
+			}
+
+			:-moz-placeholder{
+			   font-style: italic;
+			}
+
+			::-moz-placeholder{
+			   font-style: italic;
+			}
+
+			:-ms-input-placeholder{  
+			   font-style: italic;
+			}
+		}
+
+}
+
+
+
+/*//////////////////////////////////////////////*/
+/*  Comentários Feitos /////////////////////////*/
+/*//////////////////////////////////////////////*/
+
+/* 
+	@paddingBox: define o padding do box;
+	@bRadius: define o tamanho do radius da bordar;
+	@bgBox: define o background do box;
+	@borderBox: define a cor da borda do box;
+	@sizeHead: define o tamanho da font do títtulo do auto;
+	@colorHead: define a cor do título;
+	@fontHead: define o font do título;
+	@sizeIcon: define o tamanho do icone do título;
+	@colorIcon: define a cor do icone do título;
+	@sizeP: define o tamanho da font do texto;
+	@colorP: define a cor do texto;
+	@fontP: define a font do texto;
+
+*/
+
+
+.mxn-coments(@paddingBox, @bRadius, @bgBox, @borderBox, @sizeHead, @colorHead, @fontHead, @sizeIcon, @colorIcon, @sizeP, @colorP, @fontP){
+
+	// Box de comentários feitos //
+	.box-coments-text{
+		padding: @paddingBox;
+		border-radius: @bRadius;
+		background-color: @bgBox;
+		border: 1px solid @borderBox;
+		margin-left: 70px;
+
+		h2{
+			margin: 0px;
+			margin-bottom: 8px;
+			font-size: @sizeHead;
+			color: @colorHead;
+			font-family: @fontHead;
+
+				i{
+					margin-left: 10px;
+					font-size: @sizeIcon;
+					vertical-align: middle;
+					color: @colorIcon;
+					margin-right: 5px;
+				}
+
+				span{
+					font-size: @sizeIcon;
+					color: @colorIcon;
+				}
+			
+		}
+
+		p{
+			font-size: @sizeP;
+			color: @colorP;
+			font-family: @fontP;
+			margin-bottom: 10px;
+		}
+
+	}
+
+}

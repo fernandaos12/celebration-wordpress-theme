@@ -1,0 +1,1 @@
+<?php echo "E aew, beleza? Posso ajudar?"; ?>
