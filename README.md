@@ -1,5 +1,4 @@
-# site_celebration
+# celebration wordpress theme
 
-Wordpress, php (sistema de cadastro), jquery, CSS3
+Criação de tema wordpress, php (cadastro com autenticação e confirmação de cadastro por email), jquery, CSS3
 
-Site Celebration Ville URL - http://celebrationville.com.br/
